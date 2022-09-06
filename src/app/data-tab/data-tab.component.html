@@ -1,0 +1,31 @@
+<!--without bootstrap-->
+
+<!--<div class="main-tab-div">-->
+<!--  <div class="main-tab-inner">-->
+<!--    <div class="data-card" *ngFor="let shoe of filteredShoes">-->
+<!--      <img [src]="shoe.image" alt="">-->
+<!--      <h4>{{shoe.title}}</h4>-->
+<!--      <h5>{{shoe.description}}</h5>-->
+<!--      <p>{{shoe.price}} Euro</p>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--with bootstrap-->
+<div class="tab-content" id="nav-tabContent">
+  <div *ngFor="let category of categories"
+       [class]="{'tab-pane': true, 'fade': true, 'show': category.active, 'active': category.active}"
+       [id]="category.name" role="tabpanel">
+    <div class="row justify-content-center">
+      <div class="data-card" style="width: 30%" *ngFor="let shoe of shoes[categories.indexOf(category)]">
+        <img class="w-100 mb-4" [src]="shoe.image" alt="">
+        <h4 class="text-center">{{shoe.title}}</h4>
+        <h5 class="text-center">{{shoe.description}}</h5>
+        <p class="text-center">{{shoe.price}} Euro</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,15 @@
+<!--without bootstrap-->
+<!--<div class="main-div">-->
+<!--  <div class="button-div" *ngFor="let category of categories">-->
+<!--    <button [ngClass]="{'active':category.active }" (click)="setCategory(category)">{{category.name}}</button>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--with bootstrap-->
+<nav>
+  <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+    <a *ngFor="let category of categories" [class]="{'nav-link': true, 'active': category.active}" (click)="setCategory(category)"
+       [href]="category.link" role="tab">{{category.name}}</a>
+  </div>
+</nav>
+
